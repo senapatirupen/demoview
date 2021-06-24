@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitra</title>
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.3/css/fontawesome.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="border py-4"></div>
+    <!-- Products items start -->
+    <div class="text-center">
+        <h4>Login</h4>
+    </div>
+    <div class="row my-2">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="#" th:action="@{/login}" th:object="${userDetail}" method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email/Mobile</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" th:field="*{emailId}" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="#">
+                <a class="forgot m-2" href="#">Forgot Password</a><a class="forgot m-2" href="#">Forgot Email</a>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <!-- Products items End -->
+    <script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>
