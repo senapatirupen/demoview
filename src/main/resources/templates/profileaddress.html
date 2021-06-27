@@ -30,18 +30,18 @@
             </div>
 
             <div class="col-9 border">
-                <div class="row m-2">
+                <div class="row m-2" th:each="address :${addresses}">
                     <div class="col-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Home Address</h5>
+                                <h5 class="card-title" th:text="${address.type}">Home Address</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                <p class="card-text" th:text="${address.addressLineOne}">Some quick example text to build on the card title and make up the
                                     bulk of the card's content.</p>
                             </div>
                             <div class="row p-2">
                                 <div class="col-2">
-                                    <button type="button" class="btn btn-warning">Edit</button>
+                                    <a class="btn btn-warning" th:href="@{/profileaddressedit(id=${address.adId})}">Edit</a>
                                 </div>
                                 <div class="col-2 text-end">
                                     <button type="button" class="btn btn-warning">Remove</button>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <!--<div class="col-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Office Address</h5>
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="row m-2">
                     <div class="col-4">

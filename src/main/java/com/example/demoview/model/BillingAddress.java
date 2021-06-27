@@ -5,16 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Address extends AuditLog {
+public class BillingAddress extends AuditLog {
     private static final long serialVersionUID=1L;
-    private Long adId;
-    private Long peId;
+    private Long biadId;
+    private Long odId;
     private String addressLineOne;
     private String addressLineTwo;
     private String landmark;

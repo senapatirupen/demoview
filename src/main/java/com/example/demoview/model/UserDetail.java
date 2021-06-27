@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDetail implements Serializable {
+public class UserDetail extends AuditLog {
     private Long usId;
     private String firstName;
     private String lastName;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 
 <head>
     <meta charset="UTF-8">
@@ -7,11 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chitra</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Script -->
-    <script src="css/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.3/css/fontawesome.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 
 <body>
@@ -34,38 +33,42 @@
             <div class="col-9 border">
                 <div class="row g-3">
                     <div class="col-6">
-                        <label for="inputAddress" class="form-label pt-2">Name</label>
-                        <input type="text" class="form-control" placeholder="Name">
+                        <label for="name" class="form-label pt-2">Name</label>
+                        <input type="text" class="form-control" placeholder="Name"id="name" >
                     </div>
                     <div class="col-6">
-                        <label for="inputAddress" class="form-label pt-2">Mobile</label>
-                        <input type="text" class="form-control" placeholder="Mobile">
+                        <label for="phoneNumber" class="form-label pt-2">Mobile</label>
+                        <input type="text" class="form-control" placeholder="Mobile" id="phoneNumber">
                     </div>
                 </div>
-                <form class="row g-3">
+            <form class="row g-3" action="#" th:action="@{/profileaddressedit}" th:object="${address}" method="post">
                     <div class="col-6">
-                        <label for="inputAddress" class="form-label pt-2">Address Line-1</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Address Line-1">
+                        <label for="addressLineOne" class="form-label pt-2">Address Line-1</label>
+                        <input type="text" class="form-control" id="addressLineOne"
+                               th:field="*{addressLineOne}"
+                               th:value="${address.addressLineOne}">
                     </div>
                     <div class="col-6">
-                        <label for="inputAddress" class="form-label pt-2">Address Line-2</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Address Line-2">
+                        <label for="addressLineTwo" class="form-label pt-2">Address Line-2</label>
+                        <input type="text" class="form-control" id="addressLineTwo"
+                               th:field="*{addressLineTwo}"
+                               th:value="${address.addressLineTwo}">
                     </div>
                     <div class="col-6">
-                        <label for="inputAddress" class="form-label">Landmark</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Landmark">
+                        <label for="landmark" class="form-label">Landmark</label>
+                        <input type="text" class="form-control" id="landmark" placeholder="Landmark">
                     </div>
                     <div class="col-6">
-                        <label for="inputCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city">
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress2" class="form-label">District</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Dist">
+                        <label for="district" class="form-label">District</label>
+                        <input type="text" class="form-control" id="district" placeholder="Dist">
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress2" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Country">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="Country">
                     </div>
                     <div class="col-md-4">
                         <label for="inputState" class="form-label">State</label>
@@ -116,19 +119,19 @@
                     </div>
                     <div class="row p-4">
                         <div class="form-check col-3">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <input class="form-check-input" type="checkbox" id="homeAddress">
                             <label class="form-check-label" for="gridCheck">
                                 Home Address
                             </label>
                         </div>
                         <div class="form-check col-3">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <input class="form-check-input" type="checkbox" id="officeAddress">
                             <label class="form-check-label" for="gridCheck">
                                 Office Address
                             </label>
                         </div>
                         <div class="form-check col-3">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <input class="form-check-input" type="checkbox" id="billingAddress">
                             <label class="form-check-label" for="gridCheck">
                                 Billing Address
                             </label>
@@ -149,6 +152,8 @@
         </div>
     </div>
     <!-- Products items End -->
+    <script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+
 </body>
 
 </html>
