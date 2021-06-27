@@ -10,3 +10,6 @@ https://frontbackend.com/thymeleaf/thymeleaf-default-spring-boot-application-pro
 https://docs.spring.io/spring-boot/docs/2.5.x/reference/html/application-properties.html#application-properties
 https://www.baeldung.com/spring-mvc-session-attributes
 https://www.baeldung.com/thymeleaf-list
+##### must to check
+https://attacomsian.com/blog/thymeleaf-fragments
+https://attacomsian.com/blog/spring-boot-thymeleaf-layouts

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitra</title>
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.3/css/all.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<div>
+    <header class="d-flex flex-column flex-md-row align-items-center  px-md-4  bg-light" th:fragment="header">
+        <img src="../static/images/Logo-T.png" th:src="@{images/Logo-T.png}" alt="logo"
+             class="h5 my-0 me-md-auto fw-normal">
+        <nav class="my-2 my-md-0 me-md-3">
+            <a class="mx-4 p-1 " th:href="@{/cart}">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+            <a class="btn bot mx-2" th:href="@{/login}">Log in</a>
+            <a class="btn bot mx-2" th:href="@{/signup}">Sign Up</a>
+        </nav>
+    </header>
+</div>
+</body>
+</html>

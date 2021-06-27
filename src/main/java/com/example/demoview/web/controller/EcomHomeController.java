@@ -176,11 +176,26 @@ public class EcomHomeController {
         return "profileaddress";
     }
 
-//    @RequestMapping(value="/signup", method = POST)
-//    public String profile(@ModelAttribute UserDetail userDetail){
-//        log.info("processLogin() "+userDetail);
-//        return "index";
-//    }
+    @RequestMapping(value = "/products")
+    public String productsPage(Model model, @ModelAttribute UserDetail userDetail) {
+        log.info("userProfileUpdatePage() " + userDetail.getEmailId());
+        model.addAttribute("address", "address");
+        return "products";
+    }
+
+    @RequestMapping(value = "/productdetail")
+    public String productdetailPage(Model model, @ModelAttribute UserDetail userDetail) {
+        log.info("userProfileUpdatePage() " + userDetail.getEmailId());
+        model.addAttribute("address", "address");
+        return "productdetail";
+    }
+
+    @RequestMapping(value = "/cart")
+    public String cartPage(Model model, @ModelAttribute UserDetail userDetail) {
+        log.info("userProfileUpdatePage() " + userDetail.getEmailId());
+        model.addAttribute("address", "address");
+        return "cart";
+    }
 
 
 }

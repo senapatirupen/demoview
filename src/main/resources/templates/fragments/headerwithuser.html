@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitra</title>
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.3/css/all.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<div>
+    <header class="d-flex flex-column flex-md-row align-items-center  px-md-4  bg-light" th:fragment="headerwithuser">
+        <img src="image/Logo-T.png" alt="logo" class="h5 my-0 me-md-auto fw-normal">
+        <nav class="my-2 my-md-0 me-md-3">
+            <a class=" " href="cart.html">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </nav>
+        <div class="dropdown p-2">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+               data-bs-toggle="dropdown" aria-expanded="false">
+                User
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" th:href="@{/profile}">Profile</a></li>
+                <li><a class="dropdown-item" th:href="@{/order}">Order</a></li>
+                <li><a class="dropdown-item" th:href="@{/wishlist}">Wishlist</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" th:href="@{/index}">Sign Out</a></li>
+            </ul>
+        </div>
+    </header>
+</div>
+</body>
+</html>
