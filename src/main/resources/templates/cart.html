@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chitra</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Script -->
-    <script src="css/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/font-awesome/5.15.3/css/all.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 
 <body>
@@ -22,7 +19,7 @@
                 <div class="card">
                     <div class=" row g-0">
                         <div class="col-md-4">
-                            <img src="productdetail.JPG" class="img-thumbnail" alt="...">
+                            <img src="../static/images/productdetail.JPG" th:src="@{images/productdetail.JPG}" class="img-thumbnail" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -37,7 +34,7 @@
                                 <p class="card-text"><small class="text-muted">discount</small></p>
                                 <div class="dropdown mb-2">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        id="quantity2" data-bs-toggle="dropdown" aria-expanded="false">
                                         Quantity
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -60,7 +57,7 @@
                 <div class="card">
                     <div class=" row g-0">
                         <div class="col-md-4">
-                            <img src="productdetail.JPG" class="img-thumbnail" alt="...">
+                            <img src="../static/images/productdetail.JPG" th:src="@{images/productdetail.JPG}" class="img-thumbnail" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -75,7 +72,7 @@
                                 <p class="card-text"><small class="text-muted">discount</small></p>
                                 <div class="dropdown mb-2">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        id="quantity3" data-bs-toggle="dropdown" aria-expanded="false">
                                         Quantity
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -98,7 +95,7 @@
                 <div class="card">
                     <div class=" row g-0">
                         <div class="col-md-4">
-                            <img src="productdetail.JPG" class="img-thumbnail" alt="...">
+                            <img src="../static/images/productdetail.JPG" th:src="@{images/productdetail.JPG}" class="img-thumbnail" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -113,7 +110,7 @@
                                 <p class="card-text"><small class="text-muted">discount</small></p>
                                 <div class="dropdown mb-2">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        id="quantity1" data-bs-toggle="dropdown" aria-expanded="false">
                                         Quantity
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -137,6 +134,8 @@
         </div>
     </div>
     <!-- Products items End -->
+    <script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{webjars/font-awesome/5.15.3/js/all.min.js}"></script>
 </body>
 
 </html>

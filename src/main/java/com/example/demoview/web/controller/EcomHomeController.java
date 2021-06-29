@@ -3,7 +3,11 @@ package com.example.demoview.web.controller;
 import com.example.demoview.model.Address;
 import com.example.demoview.model.Person;
 import com.example.demoview.model.UserDetail;
+import com.example.demoview.service.ApiCall;
+import com.example.demoview.util.DateUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +27,9 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Slf4j
 @SessionAttributes("userDetail")
 public class EcomHomeController {
+
+    @Autowired
+    ApiCall apiCall;
 
     @ModelAttribute("userDetail")
     public UserDetail userDetail() {
@@ -66,10 +73,14 @@ public class EcomHomeController {
 
     @RequestMapping(value = "/login", method = POST)
     public String processLogin(Model model, @ModelAttribute UserDetail userDetail) {
+        userDetail.setStatus("8147713016");
+        userDetail.setPassword("thispassword");
+        ResponseEntity<UserDetail> responseEntity =  apiCall.getUser("/signIn", userDetail);
+        log.info(responseEntity.getBody().getFirstName());
         log.info("processLogin() " + userDetail);
         userDetail.setFirstName("Rupen");
         userDetail.setPhoneNumber("8147713016");
-        userDetail.setDob("12-02-2021");
+        userDetail.setDob(DateUtil.stringToDate("2021-02-12"));
         model.addAttribute("userDetail", userDetail);
         return "headerwithuser";
     }

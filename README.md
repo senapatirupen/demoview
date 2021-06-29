@@ -13,3 +13,5 @@ https://www.baeldung.com/thymeleaf-list
 ##### must to check
 https://attacomsian.com/blog/thymeleaf-fragments
 https://attacomsian.com/blog/spring-boot-thymeleaf-layouts
+##### for error page
+https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc

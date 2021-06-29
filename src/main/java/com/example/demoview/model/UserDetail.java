@@ -1,5 +1,6 @@
 package com.example.demoview.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import java.io.Serializable;
@@ -9,6 +10,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDetail extends AuditLog {
     private Long usId;
     private String firstName;
@@ -18,6 +20,5 @@ public class UserDetail extends AuditLog {
     private String phoneNumber;
     private String password;
     private String rePassword;
-    private String dob;
-    private LocalDateTime createDate;
+    private Date dob;
 }
