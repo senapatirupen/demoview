@@ -13,33 +13,42 @@
 </head>
 
 <body>
-    <div class="border py-4"></div>
-    <!-- Products items start -->
-    <div class="text-center">
-        <h4>Login</h4>
-    </div>
-    <div class="row my-2">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <form action="#" th:action="@{/login}" th:object="${userDetail}" method="post">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email/Mobile</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" th:field="*{emailId}" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-            <div class="#">
-                <a class="forgot m-2" href="#">Forgot Password</a><a class="forgot m-2" href="#">Forgot Email</a>
+<!-- header -->
+<div class="p-2">
+    <div th:replace="fragments/header :: header">Header</div>
+    <!-- navbar start -->
+    <div th:replace="fragments/navbar :: navbar">Nav Bar</div>
+    <!-- navbar end -->
+</div>
+<!-- header end -->
+<div class="border py-4"></div>
+<!-- Products items start -->
+<div class="text-center">
+    <h4>Login</h4>
+</div>
+<div class="row my-2">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="#" th:action="@{/login}" th:object="${userDetail}" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email/Mobile</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" th:field="*{emailId}"
+                       aria-describedby="emailHelp">
             </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <div class="#">
+            <a class="forgot m-2" href="#">Forgot Password</a><a class="forgot m-2" href="#">Forgot Email</a>
         </div>
-        <div class="col-4"></div>
     </div>
-    <!-- Products items End -->
-    <script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+    <div class="col-4"></div>
+</div>
+<!-- Products items End -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
 </body>
 
 </html>

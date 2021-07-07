@@ -75,8 +75,8 @@ public class EcomHomeController {
     public String processLogin(Model model, @ModelAttribute UserDetail userDetail) {
         userDetail.setStatus("8147713016");
         userDetail.setPassword("thispassword");
-        ResponseEntity<UserDetail> responseEntity =  apiCall.getUser("/signIn", userDetail);
-        log.info(responseEntity.getBody().getFirstName());
+//        ResponseEntity<UserDetail> responseEntity =  apiCall.getUser("/signIn", userDetail);
+//        log.info(responseEntity.getBody().getFirstName());
         log.info("processLogin() " + userDetail);
         userDetail.setFirstName("Rupen");
         userDetail.setPhoneNumber("8147713016");
@@ -206,6 +206,13 @@ public class EcomHomeController {
         log.info("userProfileUpdatePage() " + userDetail.getEmailId());
         model.addAttribute("address", "address");
         return "cart";
+    }
+
+    @RequestMapping(value = "/buynow")
+    public String buyNowPage(Model model, @ModelAttribute UserDetail userDetail) {
+        log.info("userProfileUpdatePage() " + userDetail.getEmailId());
+//        model.addAttribute("address", "address");
+        return "checkout";
     }
 
 

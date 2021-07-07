@@ -41,7 +41,7 @@
         <h5 class="card-title">Error</h5>
         <p class="card-text" th:text="${exception}">error</p>
         <p class="card-text" th:text="${url}">Requested URL</p>
-        <a href="#" class="btn btn-primary">Go to home</a>
+        <a class="btn btn-primary" th:href="@{/}">Go to home</a>
     </div>
     <div class="card-footer text-muted">
         Oops Something Went Wrong

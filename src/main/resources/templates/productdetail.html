@@ -14,333 +14,160 @@
 </head>
 
 <body>
-    <div>
-        <h3 class="text-center">Product Details</h3>
-    </div>
-    <div>
-        <!-- Products items start -->
-        <div class="row m-4">
-            <div class="col-4 card">
-                ​<img src="../static/images/productdetail.JPG" th:src="@{images/productdetail.JPG}" class="img-fluid" alt="Product">
-                <div class="card-body text-center">
-                    <a href="#" class="btn btn-warning btn-sm">Add To Cart</a>
-                    <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
-                </div>
+<!-- header -->
+<div class="p-2">
+    <div th:replace="fragments/headerwithuser :: headerwithuser">Header</div>
+    <!-- navbar start -->
+    <div th:replace="fragments/navbar :: navbar">Nav Bar</div>
+    <!-- navbar end -->
+</div>
+<!-- header end -->
+<div>
+    <h3 class="text-center">Product Details</h3>
+</div>
+<div>
+    <!-- Products items start -->
+    <div class="row m-4">
+        <div class="col-4 card">
+            ​<img src="../static/images/productdetail.JPG" th:src="@{images/productdetail.JPG}" class="img-fluid"
+                  alt="Product">
+            <div class="card-body text-center">
+                <a th:href="@{/cart}" class="btn btn-warning btn-sm">Add To Cart</a>
+                <a th:href="@{/buynow}" class="btn btn-primary btn-sm">Buy Now</a>
             </div>
-            <div class="col-8 p-2 border">
-                <div class="row p-4">
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <th>Name</th>
-                                <td>Product One</td>
-                            </tr>
-                            <tr>
-                                <th>Model</th>
-                                <td>Product Model One</td>
-                            </tr>
-                            <tr>
-                                <th>MRP</th>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <th>Offer</th>
-                                <td>20%</td>
-                            </tr>
-                            <tr>
-                                <th>Price</th>
-                                <td>80</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row">
-                    <div class="col-8">
-                        <form class="row gy-2 gx-3 align-items-center">
-                            <div class="col-auto">
-                                <label class="visually-hidden" for="autoSizingInput">Name</label>
-                                <input type="text" class="form-control" id="autoSizingInput" placeholder="Zipcode">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary">Check Deliverable</button>
-                            </div>
-                        </form>
-                    </div>
+        </div>
+        <div class="col-8 p-2 border">
+            <div class="row p-4">
+                <table class="table table-borderless">
+                    <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td>Product One</td>
+                    </tr>
+                    <tr>
+                        <th>Model</th>
+                        <td>Product Model One</td>
+                    </tr>
+                    <tr>
+                        <th>MRP</th>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <th>Offer</th>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td>80</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <form class="row gy-2 gx-3 align-items-center">
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="autoSizingInput">Name</label>
+                            <input type="text" class="form-control" id="autoSizingInput" placeholder="Zipcode">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Check Deliverable</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Apple iPad</h4>
-                                    <p class="item-price"><strike>$400.00</strike> <span>$369.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Sony Headphone</h4>
-                                    <p class="item-price"><strike>$25.00</strike> <span>$23.99</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Macbook Air</h4>
-                                    <p class="item-price"><strike>$899.00</strike> <span>$649.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Nikon DSLR</h4>
-                                    <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Sony Play Station</h4>
-                                    <p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Macbook Pro</h4>
-                                    <p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Bose Speaker</h4>
-                                    <p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Samsung Galaxy S8</h4>
-                                    <p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Apple iPhone</h4>
-                                    <p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Canon DSLR</h4>
-                                    <p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Google Pixel</h4>
-                                    <p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="thumb-wrapper">
-                                <div class="img-box">
-                                    <img src="image/productlist.JPG" class="img-fluid" alt="">
-                                </div>
-                                <div class="thumb-content">
-                                    <h4>Apple Watch</h4>
-                                    <p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+</div>
+<div class=" mt-2 border">
+    <div class="row p-4">
+        <div class="col-4">
+            <h5 class="text-center"><b>Duration</b></h5>
+            <table class="table table-borderless">
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>Product One</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>Product Model One</td>
+                </tr>
+                <tr>
+                    <th>MRP</th>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <th>Offer</th>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>80</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <h5 class="text-center"><b>Description</b></h5>
+            <table class="table table-borderless">
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>Product One</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>Product Model One</td>
+                </tr>
+                <tr>
+                    <th>MRP</th>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <th>Offer</th>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>80</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <h5 class="text-center"><b>Specification</b></h5>
+            <table class="table table-borderless">
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>Product One</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>Product Model One</td>
+                </tr>
+                <tr>
+                    <th>MRP</th>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <th>Offer</th>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>80</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <!-- Similar Products -->
-
-    <div class=" mt-2 border">
-        <div class="row p-4">
-            <div class="col-4">
-                <h5 class="text-center"><b>Duration</b></h5>
-                <table class="table table-borderless">
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <td>Product One</td>
-                        </tr>
-                        <tr>
-                            <th>Model</th>
-                            <td>Product Model One</td>
-                        </tr>
-                        <tr>
-                            <th>MRP</th>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <th>Offer</th>
-                            <td>20%</td>
-                        </tr>
-                        <tr>
-                            <th>Price</th>
-                            <td>80</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-4">
-                <h5 class="text-center"><b>Description</b></h5>
-                <table class="table table-borderless">
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <td>Product One</td>
-                        </tr>
-                        <tr>
-                            <th>Model</th>
-                            <td>Product Model One</td>
-                        </tr>
-                        <tr>
-                            <th>MRP</th>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <th>Offer</th>
-                            <td>20%</td>
-                        </tr>
-                        <tr>
-                            <th>Price</th>
-                            <td>80</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-4">
-                <h5 class="text-center"><b>Specification</b></h5>
-                <table class="table table-borderless">
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <td>Product One</td>
-                        </tr>
-                        <tr>
-                            <th>Model</th>
-                            <td>Product Model One</td>
-                        </tr>
-                        <tr>
-                            <th>MRP</th>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <th>Offer</th>
-                            <td>20%</td>
-                        </tr>
-                        <tr>
-                            <th>Price</th>
-                            <td>80</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- Products items End-->
-    <!-- Script -->
-    <script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+</div>
+<!-- Products items End-->
+<!-- Script -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript" th:src="@{webjars/font-awesome/5.15.3/js/all.min.js}"></script>
 
 </body>
 

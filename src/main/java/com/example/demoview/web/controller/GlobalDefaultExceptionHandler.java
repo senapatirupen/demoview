@@ -1,5 +1,6 @@
 package com.example.demoview.web.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -8,13 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Slf4j
 @ControllerAdvice
 class GlobalDefaultExceptionHandler {
+
     public static final String DEFAULT_ERROR_VIEW = "error";
 
     @ExceptionHandler(value = Exception.class)
     public ModelAndView
     defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
+        log.error(">> Oops Something went wrong: " + e.getLocalizedMessage());
         // If the exception is annotated with @ResponseStatus rethrow it and let
         // the framework handle it - like the OrderNotFoundException example
         // at the start of this post.
